@@ -2,7 +2,9 @@ body{
         background-color: rgb(0, 0, 0);
 }
 #gameFrame{
-        background-color: black;
+        background-image:url(../img/office.png);
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 600px;
         width: 800px;
         margin: auto;
@@ -15,7 +17,7 @@ body{
         top: 0;
         left: 0;
         height: 20px;
-        width: 100%;background-color: rgb(148, 0, 0);
+        width: 100%;background-color: rgb(93, 93, 93);
         transition: width .5s;
         text-align: center;
         font-family: 'Bebas Neue';
@@ -23,17 +25,17 @@ body{
 }
 .losePoints{
         animation-name: losePoints;
-        animation-duration: 0.2s;
+        animation-duration: 2s;
 }
 @keyframes losePoints {
 	from { background-color: rgb(255, 255, 255); }
-	to { background-color: red; }
+	to { background-color: rgb(175, 0, 0); }
 }
 #startButton{
         position: absolute;
         top: 300px;
         left: 250px;
-        background-color: rgb(148, 0, 0);
+        background-color: rgb(92, 92, 92);
         border-radius: 0;
         width: 300px;
         height: 50px;
@@ -45,26 +47,26 @@ body{
         color: black;
 }
 #startButton:active{
-        color:red;
+        color:rgb(0, 255, 68);
 }
 .enemy{
         width:150px;
         height: 400px;
         position: absolute;
-        background-image: url(../img/enemy.png);
+        background-image: url(../img/empoyer1.png);
         background-repeat: no-repeat;
         bottom: -400px;
-        transition: all .1s;
+        transition: all .5s;
 }
 
 .enemy.dead{
-        background-image: url(../img/dead.png);
+        background-image: url(../img/employer3.png);
         background-repeat: no-repeat;
-        animation: dead;
+        /* animation: dead;
         animation-duration: .2s;
-        animation-fill-mode: both;
+        animation-fill-mode: both; */
 }
-@-webkit-keyframes dead {
+/* @-webkit-keyframes dead {
         0% {
           -webkit-transform: rotate(0);
                   transform: rotate(0);
@@ -91,14 +93,14 @@ body{
           -webkit-transform-origin: 0% 100%;
                   transform-origin: 0% 100%;
         }
-      }
+      } */
 .enemy.showing{
         bottom:0px;
-        background-image: url(../img/enemy.png);
+        background-image: url(../img/employer1.png);
         background-repeat: no-repeat;
 }
 .enemy.shooting{
-        background-image: url(../img/enemyAttack.png);
+        background-image: url(../img/employer2.png);
         background-repeat: no-repeat;
 }
 .dNone{

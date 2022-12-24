@@ -5,7 +5,7 @@ function iShoot(enemy) {
         hurt();
         deadSong();
         if (!livingEnemies().length) {
-                alert("You Win the game!");
+                alert("you are engaged!");
                 window.location.reload();
         }
 };
@@ -14,22 +14,22 @@ function enemyAttack(enemy) {
         enemy.classList.add("showing");
         setTimeout(() => {
                 enemyShoots(enemy);
-        }, 800);
+        }, 1500);
         setTimeout(() => {
                 enemy.classList.remove("showing");
-        }, 1000);
+        }, 2000);
 };
 
-//Enemies shoots you
+//You shoot enemies
 function enemyShoots(enemy) {
         if (!enemy.classList.contains("dead")) {
-                enemy.classList.add("shooting");
-                updateHealthPoints(healthPoints - 20);
                 fire();
+                enemy.classList.add("shooting");
+                updateHealthPoints(healthPoints - 10);
                 // hit();
                 setTimeout(() => {
                         enemy.classList.remove("shooting");
-                }, 200);
+                }, 3000);
         }
 };
 
@@ -64,7 +64,7 @@ function updateHealthPoints(points) {
                 healthBar.classList.remove('losePoints');
         },1000);
         if (healthPoints < 1) {
-                alert("Game Over!");
+                alert("you are not engaged!");
                 // stop();
                 gameOver();
                 window.location.reload();
