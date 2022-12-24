@@ -13,8 +13,14 @@
 <body>
         <div id="gameFrame">
 
-                <div id="healthBar"></div>
-                <button id="startButton" onclick="randomEnemyAttack()"> New Game</button>
+                <div id="healthBar">PV</div>
+                <button id="startButton" onclick="randomEnemyAttack(),play()"> New Game</button>
+                <audio src="./public/img/song.mp3" id="play"></audio>
+                <audio src="./public/img/hurt.mp3" id="hurt"></audio>
+                <audio src="./public/img/deathsong.mp3" id="deadSong"></audio>
+                <audio src="./public/img/gameOver.mp3" id="gameOver"></audio>
+                <audio src="./public/img/fire.mp3" id="fire"></audio>
+                <!-- <audio src="./public/img/hit.mp3" id="hit"></audio> -->
                 <div class="enemy" id="enemy1" onclick="iShoot(this)"></div>
                 <div class="enemy" id="enemy2" onclick="iShoot(this)"></div>
                 <div class="enemy" id="enemy3" onclick="iShoot(this)"></div>

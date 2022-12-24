@@ -1,4 +1,6 @@
-
+body{
+        background-color: rgb(0, 0, 0);
+}
 #gameFrame{
         background-color: black;
         height: 600px;
@@ -13,22 +15,25 @@
         top: 0;
         left: 0;
         height: 20px;
-        width: 100%;background-color: orange;
+        width: 100%;background-color: rgb(148, 0, 0);
         transition: width .5s;
+        text-align: center;
+        font-family: 'Bebas Neue';
+        font-size: 15px;
 }
 .losePoints{
         animation-name: losePoints;
         animation-duration: 0.2s;
 }
 @keyframes losePoints {
-	from { background-color: orange; }
+	from { background-color: rgb(255, 255, 255); }
 	to { background-color: red; }
 }
 #startButton{
         position: absolute;
         top: 300px;
         left: 250px;
-        background-color: orange;
+        background-color: rgb(148, 0, 0);
         border-radius: 0;
         width: 300px;
         height: 50px;
@@ -49,7 +54,7 @@
         background-image: url(../img/enemy.png);
         background-repeat: no-repeat;
         bottom: -400px;
-        transition: all .3s;
+        transition: all .1s;
 }
 
 .enemy.dead{

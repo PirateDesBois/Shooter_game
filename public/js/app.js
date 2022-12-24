@@ -2,7 +2,8 @@
 function iShoot(enemy) {
 
         enemy.classList.add("dead");
-
+        hurt();
+        deadSong();
         if (!livingEnemies().length) {
                 alert("You Win the game!");
                 window.location.reload();
@@ -13,10 +14,10 @@ function enemyAttack(enemy) {
         enemy.classList.add("showing");
         setTimeout(() => {
                 enemyShoots(enemy);
-        }, 1000);
+        }, 800);
         setTimeout(() => {
                 enemy.classList.remove("showing");
-        }, 3000);
+        }, 1000);
 };
 
 //Enemies shoots you
@@ -24,6 +25,8 @@ function enemyShoots(enemy) {
         if (!enemy.classList.contains("dead")) {
                 enemy.classList.add("shooting");
                 updateHealthPoints(healthPoints - 20);
+                fire();
+                // hit();
                 setTimeout(() => {
                         enemy.classList.remove("shooting");
                 }, 200);
@@ -62,6 +65,36 @@ function updateHealthPoints(points) {
         },1000);
         if (healthPoints < 1) {
                 alert("Game Over!");
+                // stop();
+                gameOver();
                 window.location.reload();
         }
 };
+// play sound on click
+let play = function(){document.getElementById("play").play()}
+// let stop = function(){document.getElementById("play").pause()}
+// hurt song
+function hurt() {
+        var hurt = document.getElementById("hurt");
+        hurt.play();
+      };
+// dead song
+function deadSong() {
+        var deadsong = document.getElementById("deadSong");
+        deadsong.play();
+      };
+// Game Over song
+function gameOver() {
+        var gameOver = document.getElementById("gameOver");
+        gameOver.play();
+      };
+// fire song
+function fire() {
+        var fire = document.getElementById("fire");
+        fire.play();
+      };
+// hit song
+// function hit() {
+//         var hit = document.getElementById("hit");
+//         hit.play();
+//       };
